@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  # RabbitMQ сервер
+  rabbitmq:
+    image: rabbitmq:3.10.7-management
+    container_name: fitnessbot-rabbitmq
+    hostname: rabbitmq
+    restart: always
+    ports:
+      - "5672:5672"    # AMQP протокол
+      - "15672:15672"  # Web UI
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=admin123
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    healthcheck:
+      test: ["CMD", "rabbitmqctl", "status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # FastAPI приложение
+  fastapi:
+    build: .
+    container_name: fitnessbot-api
+    ports:
+      - "8000:8000"
+    environment:
+      - RABBITMQ_URL=amqp://admin:admin123@rabbitmq:5672/
+      - ENVIRONMENT=docker
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    volumes:
+      - ./src:/app/src
+    command: uvicorn src.fast_api.main:app --host 0.0.0.0 --port 8000 --reload
+    # Для продакшена уберите --reload и используйте команду по умолчанию из Dockerfile
+
+  # Telegram бот (будет добавлен позже)
+  # telegram-bot:
+  #   build: .
+  #   container_name: fitnessbot-telegram
+  #   environment:
+  #     - RABBITMQ_URL=amqp://admin:admin123@rabbitmq:5672/
+  #     - TELEGRAM_BOT_TOKEN=your_token_here
+  #   depends_on:
+  #     rabbitmq:
+  #       condition: service_healthy
+  #   volumes:
+  #     - ./src:/app/src
+  #   command: python src/tg_bot/main.py
+
+volumes:
+  rabbitmq_data:
