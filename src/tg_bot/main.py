@@ -3,14 +3,38 @@ import asyncio
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters import Command
 from faststream.rabbit import RabbitBroker
+import aiormq
+
+from dotenv import load_dotenv
+
+# Загружаем переменные из .env файла
+load_dotenv()
 
 # Инициализация бота и диспетчера
-bot = Bot(token=os.getenv('TELEGRAM_BOT_TOKEN'))
+token=os.getenv('TELEGRAM_BOT_TOKEN')
+print(token)
+bot = Bot(token)
 dp = Dispatcher()
 
 # Подключение к RabbitMQ
-rabbit_url = os.getenv('RABBITMQ_URL', 'amqp://admin:admin123@rabbitmq:5672/')
+rabbit_url = os.getenv('RABBITMQ_URL')
 broker = RabbitBroker(rabbit_url)
+
+async def wait_for_rabbitmq(max_retries: int = 30, delay: float = 2.0):
+    """Ждет, пока RabbitMQ станет доступным"""
+    for attempt in range(max_retries):
+        try:
+            connection = await aiormq.connect(rabbit_url)
+            await connection.close()
+            print(f"✓ Telegram Bot: RabbitMQ доступен после {attempt + 1} попытки")
+            return True
+        except (aiormq.exceptions.AMQPConnectionError, ConnectionRefusedError, OSError) as e:
+            print(f"⚠ Telegram Bot: Попытка {attempt + 1}/{max_retries}: RabbitMQ недоступен - {e}")
+            if attempt < max_retries - 1:
+                await asyncio.sleep(delay)
+            else:
+                print("❌ Telegram Bot: Не удалось подключиться к RabbitMQ после всех попыток")
+                raise
 
 @dp.message(Command("start"))
 async def start_command(message: types.Message):
@@ -54,8 +78,12 @@ async def handle_message(message: types.Message):
 async def main():
     """Основная функция запуска бота"""
 
+    # Ждем, пока RabbitMQ станет доступным
+    await wait_for_rabbitmq()
+
     # Подключаемся к RabbitMQ
     await broker.connect()
+    print("✓ Telegram Bot успешно подключен к RabbitMQ")
 
     # Запускаем бота
     await dp.start_polling(bot)

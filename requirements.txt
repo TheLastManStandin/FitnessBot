@@ -3,3 +3,4 @@ requests
 aiogram
 uvicorn
 faststream[rabbit]
+aiormq
