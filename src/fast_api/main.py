@@ -3,12 +3,13 @@ import os
 from fastapi import FastAPI, HTTPException
 from faststream.rabbit.fastapi import RabbitRouter
 import aiormq
+from tg_bot.core.config import config
 
 app = FastAPI()
 
 async def wait_for_rabbitmq(max_retries: int = 30, delay: float = 2.0):
     """Ждет, пока RabbitMQ станет доступным"""
-    rabbitmq_url = os.getenv("RABBITMQ_URL", "amqp://admin:admin123@rabbitmq:5672/")
+    rabbitmq_url = config.RABBITMQ_URL
 
     for attempt in range(max_retries):
         try:

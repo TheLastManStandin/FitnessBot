@@ -1,98 +1,68 @@
+"""
+Главный модуль телеграм бота FitnessBot
+
+Архитектура:
+- core/ - инициализация бота и RabbitMQ
+- callbacks/ - обработчики сообщений и команд
+- services/ - сервисные функции (ожидание RabbitMQ)
+"""
 import os
 import asyncio
-from aiogram import Bot, Dispatcher, types
-from aiogram.filters import Command
-from faststream.rabbit import RabbitBroker
-import aiormq
 
-from dotenv import load_dotenv
+# Импорт модулей из новой структуры
+from core import BotInitializer, RabbitMQInitializer
+from callbacks import register_command_handlers, register_message_handlers
 
-# Загружаем переменные из .env файла
-load_dotenv()
 
-# Инициализация бота и диспетчера
-token=os.getenv('TELEGRAM_BOT_TOKEN')
-print(token)
-bot = Bot(token)
-dp = Dispatcher()
+class FitnessBotApp:
+    """Основной класс приложения телеграм бота"""
 
-# Подключение к RabbitMQ
-rabbit_url = os.getenv('RABBITMQ_URL')
-broker = RabbitBroker(rabbit_url)
+    def __init__(self):
+        self.bot_initializer = None
+        self.rabbitmq_initializer = None
 
-async def wait_for_rabbitmq(max_retries: int = 30, delay: float = 2.0):
-    """Ждет, пока RabbitMQ станет доступным"""
-    for attempt in range(max_retries):
+    async def initialize(self):
+        """Инициализирует все компоненты бота"""
+        print("🚀 Инициализация FitnessBot...")
+
+        # Инициализация RabbitMQ
+        self.rabbitmq_initializer = RabbitMQInitializer()
+        await self.rabbitmq_initializer.connect()
+
+        # Инициализация бота
+        self.bot_initializer = BotInitializer()
+
+        # Регистрация обработчиков
+        dp = self.bot_initializer.get_dispatcher()
+        await register_command_handlers(dp)
+        await register_message_handlers(dp, self.rabbitmq_initializer)
+
+        print("✅ Все компоненты инициализированы")
+
+    async def run(self):
+        """Запускает бота"""
         try:
-            connection = await aiormq.connect(rabbit_url)
-            await connection.close()
-            print(f"✓ Telegram Bot: RabbitMQ доступен после {attempt + 1} попытки")
-            return True
-        except (aiormq.exceptions.AMQPConnectionError, ConnectionRefusedError, OSError) as e:
-            print(f"⚠ Telegram Bot: Попытка {attempt + 1}/{max_retries}: RabbitMQ недоступен - {e}")
-            if attempt < max_retries - 1:
-                await asyncio.sleep(delay)
-            else:
-                print("❌ Telegram Bot: Не удалось подключиться к RabbitMQ после всех попыток")
-                raise
+            await self.bot_initializer.start_polling()
+        except KeyboardInterrupt:
+            print("\n🛑 Бот остановлен пользователем")
+        except Exception as e:
+            print(f"❌ Ошибка при запуске бота: {e}")
+            raise
 
-@dp.message(Command("start"))
-async def start_command(message: types.Message):
-    """Обработчик команды /start"""
-    await message.answer(
-        "Привет! Я FitnessBot 🏋️‍♂️\n"
-        "Я помогу тебе отслеживать твои тренировки и питание.\n\n"
-        "Доступные команды:\n"
-        "/start - начать работу\n"
-        "/help - помощь\n"
-        "\nНачнем работу над твоей формой! 💪"
-    )
-
-@dp.message(Command("help"))
-async def help_command(message: types.Message):
-    """Обработчик команды /help"""
-    await message.answer(
-        "Помощь по FitnessBot:\n\n"
-        "Я помогу тебе:\n"
-        "• Отслеживать тренировки\n"
-        "• Вести дневник питания\n"
-        "• Настроить цели\n\n"
-        "Просто отправь мне свои данные!"
-    )
-
-@dp.message()
-async def handle_message(message: types.Message):
-    """Обработчик всех сообщений"""
-    # Отправляем сообщение в RabbitMQ для обработки
-    await broker.publish(
-        {
-            "user_id": message.from_user.id,
-            "message": message.text,
-            "timestamp": message.date.isoformat()
-        },
-        "telegram_messages"
-    )
-
-    await message.answer("Сообщение получено! Обрабатываю... 🔄")
 
 async def main():
-    """Основная функция запуска бота"""
+    """Основная функция запуска"""
+    app = FitnessBotApp()
+    await app.initialize()
+    await app.run()
 
-    # Ждем, пока RabbitMQ станет доступным
-    await wait_for_rabbitmq()
-
-    # Подключаемся к RabbitMQ
-    await broker.connect()
-    print("✓ Telegram Bot успешно подключен к RabbitMQ")
-
-    # Запускаем бота
-    await dp.start_polling(bot)
 
 if __name__ == "__main__":
-    # Проверяем наличие токена
-    if not os.getenv('TELEGRAM_BOT_TOKEN'):
-        print("Ошибка: TELEGRAM_BOT_TOKEN не установлен!")
+    # Запускаем приложение
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        print("\n👋 До свидания!")
+    except Exception as e:
+        print(f"💥 Критическая ошибка: {e}")
         exit(1)
-
-    # Запускаем бота
-    asyncio.run(main())
