@@ -5,6 +5,8 @@ uvicorn
 faststream[rabbit]
 aiormq
 pydantic
+loguru
+pika
 
 # Testing dependencies
 pytest

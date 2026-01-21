@@ -3,7 +3,8 @@ import os
 from fastapi import FastAPI, HTTPException
 from faststream.rabbit.fastapi import RabbitRouter
 import aiormq
-from tg_bot.core.config import config
+from .config import config
+from loguru import logger
 
 app = FastAPI()
 
@@ -15,14 +16,14 @@ async def wait_for_rabbitmq(max_retries: int = 30, delay: float = 2.0):
         try:
             connection = await aiormq.connect(rabbitmq_url)
             await connection.close()
-            print(f"✓ RabbitMQ доступен после {attempt + 1} попытки")
+            logger.info(f"✓ RabbitMQ доступен после {attempt + 1} попытки")
             return True
         except (aiormq.exceptions.AMQPConnectionError, ConnectionRefusedError, OSError) as e:
-            print(f"⚠ Попытка {attempt + 1}/{max_retries}: RabbitMQ недоступен - {e}")
+            logger.info(f"⚠ Попытка {attempt + 1}/{max_retries}: RabbitMQ недоступен - {e}")
             if attempt < max_retries - 1:
                 await asyncio.sleep(delay)
             else:
-                print("❌ Не удалось подключиться к RabbitMQ после всех попыток")
+                logger.error("❌ Не удалось подключиться к RabbitMQ после всех попыток")
                 raise
 
 # Создаем router только после успешного подключения к RabbitMQ
@@ -33,7 +34,7 @@ async def create_router():
 
     @router.post("/new_day_message")
     async def test():
-        return {"data": "OK"}
+        return {"data": "Новый день брат наступил$"}
 
     @router.get("/health")
     async def health_check():
@@ -52,9 +53,9 @@ async def startup_event():
     try:
         router = await create_router()
         app.include_router(router)
-        print("✓ FastAPI успешно подключен к RabbitMQ")
+        logger.info("✓ FastAPI успешно подключен к RabbitMQ")
     except Exception as e:
-        print(f"❌ Ошибка при инициализации RabbitRouter: {e}")
+        logger.error(f"❌ Ошибка при инициализации RabbitRouter: {e}")
         raise
 
 # Эндпоинт для проверки готовности приложения

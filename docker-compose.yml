@@ -37,7 +37,7 @@ services:
     # Для продакшена уберите --reload и используйте команду по умолчанию из Dockerfile
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
-      interval: 30s
+      interval: 10s
       timeout: 10s
       retries: 3
       start_period: 40s
@@ -56,13 +56,14 @@ services:
         condition: service_healthy
     volumes:
       - ./src:/app/src
-    command: python3 src/tg_bot/main.py
+    working_dir: /app/src
+    command: python3 -m tg_bot.__main__
     healthcheck:
-      test: ["CMD", "pgrep", "-f", "python3 src/tg_bot/main.py"]
+      test: ["CMD", "python3", "src/tg_bot/healthcheck.py"]
       interval: 30s
       timeout: 10s
       retries: 3
-      start_period: 60s
+      start_period: 20s
 
 volumes:
   rabbitmq_data:

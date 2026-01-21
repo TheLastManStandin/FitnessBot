@@ -1,0 +1,196 @@
+2026-01-21T03:51:53.009306+0000 | INFO | __main__:initialize:29 | bot starting...
+2026-01-21T03:51:53.026916+0000 | INFO | rabbitmq_service:wait_for_rabbitmq:32 | ✓ RabbitMQ доступен после 1 попытки
+2026-01-21T03:51:53.034667+0000 | INFO | rabbitmq_init:connect:29 | ✓ Успешно подключились к RabbitMQ
+2026-01-21T03:51:53.039949+0000 | ERROR | __main__:<module>:80 | 💥 Критическая ошибка: cannot unpack non-iterable coroutine object
+2026-01-21T03:52:35.942150+0000 | INFO | __main__:initialize:29 | bot starting...
+2026-01-21T03:52:35.959199+0000 | INFO | rabbitmq_service:wait_for_rabbitmq:32 | ✓ RabbitMQ доступен после 1 попытки
+2026-01-21T03:52:35.973504+0000 | INFO | rabbitmq_init:connect:29 | ✓ Успешно подключились к RabbitMQ
+2026-01-21T03:52:35.974041+0000 | INFO | bot_init:bot_init:15 | 🔑 Токен бота получен (длина: 45 символов)
+2026-01-21T03:52:36.152885+0000 | INFO | bot_init:bot_init:21 | Name     - goodboy
+2026-01-21T03:52:36.153126+0000 | INFO | bot_init:bot_init:22 | Username - @ggoodboyybot
+2026-01-21T03:52:36.153384+0000 | INFO | bot_init:bot_init:23 | ID       - 848325310
+2026-01-21T03:52:36.153796+0000 | INFO | bot_init:bot_init:24 | BOT INITIALIZATION
+2026-01-21T03:52:36.155233+0000 | INFO | bot_init:bot_init:32 | 🚀 Запускаем телеграм бота...
+2026-01-21T03:54:44.355733+0000 | INFO | __main__:initialize:43 | ✅ Все компоненты инициализированы
+2026-01-21T03:54:44.360230+0000 | ERROR | __main__:run:52 | ❌ Ошибка при запуске бота: 'FitnessBotApp' object has no attribute 'bot_initializer'
+2026-01-21T03:54:44.364153+0000 | ERROR | __main__:<module>:80 | 💥 Критическая ошибка: 'FitnessBotApp' object has no attribute 'bot_initializer'
+2026-01-21T03:54:53.385569+0000 | INFO | __main__:initialize:29 | bot starting...
+2026-01-21T03:54:53.400667+0000 | INFO | rabbitmq_service:wait_for_rabbitmq:32 | ✓ RabbitMQ доступен после 1 попытки
+2026-01-21T03:54:53.417171+0000 | INFO | rabbitmq_init:connect:29 | ✓ Успешно подключились к RabbitMQ
+2026-01-21T03:54:53.417569+0000 | INFO | bot_init:bot_init:15 | 🔑 Токен бота получен (длина: 45 символов)
+2026-01-21T03:54:53.791136+0000 | INFO | bot_init:bot_init:21 | Name     - goodboy
+2026-01-21T03:54:53.791440+0000 | INFO | bot_init:bot_init:22 | Username - @ggoodboyybot
+2026-01-21T03:54:53.791600+0000 | INFO | bot_init:bot_init:23 | ID       - 848325310
+2026-01-21T03:54:53.791855+0000 | INFO | bot_init:bot_init:24 | BOT INITIALIZATION
+2026-01-21T03:54:53.793159+0000 | INFO | bot_init:bot_init:32 | 🚀 Запускаем телеграм бота...
+2026-01-21T03:59:39.512379+0000 | INFO | __main__:initialize:43 | ✅ Все компоненты инициализированы
+2026-01-21T03:59:39.512680+0000 | ERROR | __main__:run:52 | ❌ Ошибка при запуске бота: 'FitnessBotApp' object has no attribute 'bot_initializer'
+2026-01-21T03:59:39.515372+0000 | ERROR | __main__:<module>:80 | 💥 Критическая ошибка: 'FitnessBotApp' object has no attribute 'bot_initializer'
+2026-01-21T03:59:48.626076+0000 | INFO | rabbitmq_service:wait_for_rabbitmq:32 | ✓ RabbitMQ доступен после 1 попытки
+2026-01-21T03:59:48.634763+0000 | INFO | rabbitmq_init:connect:29 | ✓ Успешно подключились к RabbitMQ
+2026-01-21T03:59:48.634997+0000 | INFO | bot_init:bot_init:15 | 🔑 Токен бота получен (длина: 45 символов)
+2026-01-21T03:59:48.820939+0000 | INFO | bot_init:bot_init:21 | Name     - goodboy
+2026-01-21T03:59:48.821115+0000 | INFO | bot_init:bot_init:22 | Username - @ggoodboyybot
+2026-01-21T03:59:48.821174+0000 | INFO | bot_init:bot_init:23 | ID       - 848325310
+2026-01-21T03:59:48.821221+0000 | INFO | bot_init:bot_init:24 | BOT INITIALIZATION
+2026-01-21T03:59:48.821825+0000 | INFO | bot_init:bot_init:32 | 🚀 Запускаем телеграм бота...
+2026-01-21T04:00:36.309733+0000 | INFO | command_handlers:register_command_handlers:55 | Инициализация команд прошла успешно
+2026-01-21T04:00:36.310161+0000 | INFO | message_handlers:register_message_handlers:48 | Инициализация сообщений прошла успешно
+2026-01-21T04:00:36.310320+0000 | INFO | __main__:initialize:41 | ✅ Все компоненты инициализированы
+2026-01-21T04:00:36.310480+0000 | ERROR | __main__:run:50 | ❌ Ошибка при запуске бота: 'FitnessBotApp' object has no attribute 'bot_initializer'
+2026-01-21T04:00:36.313351+0000 | ERROR | __main__:<module>:78 | 💥 Критическая ошибка: 'FitnessBotApp' object has no attribute 'bot_initializer'
+2026-01-21T04:00:45.390816+0000 | INFO | rabbitmq_service:wait_for_rabbitmq:32 | ✓ RabbitMQ доступен после 1 попытки
+2026-01-21T04:00:45.400370+0000 | INFO | rabbitmq_init:connect:29 | ✓ Успешно подключились к RabbitMQ
+2026-01-21T04:00:45.400584+0000 | INFO | bot_init:bot_init:15 | 🔑 Токен бота получен (длина: 45 символов)
+2026-01-21T04:00:45.638842+0000 | INFO | bot_init:bot_init:21 | Name     - goodboy
+2026-01-21T04:00:45.639002+0000 | INFO | bot_init:bot_init:22 | Username - @ggoodboyybot
+2026-01-21T04:00:45.639058+0000 | INFO | bot_init:bot_init:23 | ID       - 848325310
+2026-01-21T04:00:45.639107+0000 | INFO | bot_init:bot_init:24 | BOT INITIALIZATION
+2026-01-21T04:00:45.639643+0000 | INFO | bot_init:bot_init:32 | 🚀 Запускаем телеграм бота...
+2026-01-21T04:01:19.076194+0000 | INFO | bot_init:bot_init:34 | TESTIN
+2026-01-21T04:01:19.076752+0000 | INFO | command_handlers:register_command_handlers:55 | Инициализация команд прошла успешно
+2026-01-21T04:01:19.076880+0000 | INFO | message_handlers:register_message_handlers:48 | Инициализация сообщений прошла успешно
+2026-01-21T04:01:19.076934+0000 | INFO | __main__:initialize:41 | ✅ Все компоненты инициализированы
+2026-01-21T04:01:19.077080+0000 | ERROR | __main__:run:50 | ❌ Ошибка при запуске бота: 'FitnessBotApp' object has no attribute 'bot_initializer'
+2026-01-21T04:01:19.078714+0000 | ERROR | __main__:<module>:78 | 💥 Критическая ошибка: 'FitnessBotApp' object has no attribute 'bot_initializer'
+2026-01-21T04:01:28.305859+0000 | INFO | rabbitmq_service:wait_for_rabbitmq:32 | ✓ RabbitMQ доступен после 1 попытки
+2026-01-21T04:01:28.318436+0000 | INFO | rabbitmq_init:connect:29 | ✓ Успешно подключились к RabbitMQ
+2026-01-21T04:01:28.318627+0000 | INFO | bot_init:bot_init:15 | 🔑 Токен бота получен (длина: 45 символов)
+2026-01-21T04:01:28.491945+0000 | INFO | bot_init:bot_init:21 | Name     - goodboy
+2026-01-21T04:01:28.492149+0000 | INFO | bot_init:bot_init:22 | Username - @ggoodboyybot
+2026-01-21T04:01:28.492204+0000 | INFO | bot_init:bot_init:23 | ID       - 848325310
+2026-01-21T04:01:28.492256+0000 | INFO | bot_init:bot_init:24 | BOT INITIALIZATION
+2026-01-21T04:01:28.492886+0000 | INFO | bot_init:bot_init:32 | 🚀 Запускаем телеграм бота...
+2026-01-21T04:01:55.805967+0000 | INFO | bot_init:bot_init:34 | TESTIN
+2026-01-21T04:01:55.811621+0000 | INFO | command_handlers:register_command_handlers:55 | Инициализация команд прошла успешно
+2026-01-21T04:01:55.812009+0000 | INFO | message_handlers:register_message_handlers:48 | Инициализация сообщений прошла успешно
+2026-01-21T04:01:55.812172+0000 | INFO | __main__:initialize:41 | ✅ Все компоненты инициализированы
+2026-01-21T04:01:55.812332+0000 | ERROR | __main__:run:50 | ❌ Ошибка при запуске бота: 'FitnessBotApp' object has no attribute 'bot_initializer'
+2026-01-21T04:01:55.815787+0000 | ERROR | __main__:<module>:78 | 💥 Критическая ошибка: 'FitnessBotApp' object has no attribute 'bot_initializer'
+2026-01-21T04:01:58.228873+0000 | INFO | rabbitmq_service:wait_for_rabbitmq:32 | ✓ RabbitMQ доступен после 1 попытки
+2026-01-21T04:01:58.237562+0000 | INFO | rabbitmq_init:connect:29 | ✓ Успешно подключились к RabbitMQ
+2026-01-21T04:01:58.237743+0000 | INFO | bot_init:bot_init:15 | 🔑 Токен бота получен (длина: 45 символов)
+2026-01-21T04:01:58.547253+0000 | INFO | bot_init:bot_init:21 | Name     - goodboy
+2026-01-21T04:01:58.547412+0000 | INFO | bot_init:bot_init:22 | Username - @ggoodboyybot
+2026-01-21T04:01:58.547466+0000 | INFO | bot_init:bot_init:23 | ID       - 848325310
+2026-01-21T04:01:58.547523+0000 | INFO | bot_init:bot_init:24 | BOT INITIALIZATION
+2026-01-21T04:01:58.548104+0000 | INFO | bot_init:bot_init:32 | 🚀 Запускаем телеграм бота...
+2026-01-21T04:07:37.273670+0000 | INFO | bot_init:bot_init:34 | TESTIN
+2026-01-21T04:07:37.274806+0000 | INFO | command_handlers:register_command_handlers:55 | Инициализация команд прошла успешно
+2026-01-21T04:07:37.275090+0000 | INFO | message_handlers:register_message_handlers:48 | Инициализация сообщений прошла успешно
+2026-01-21T04:07:37.275245+0000 | INFO | __main__:initialize:41 | ✅ Все компоненты инициализированы
+2026-01-21T04:07:37.275392+0000 | ERROR | __main__:run:50 | ❌ Ошибка при запуске бота: 'FitnessBotApp' object has no attribute 'bot_initializer'
+2026-01-21T04:07:37.278861+0000 | ERROR | __main__:<module>:78 | 💥 Критическая ошибка: 'FitnessBotApp' object has no attribute 'bot_initializer'
+2026-01-21T04:07:39.639304+0000 | INFO | rabbitmq_service:wait_for_rabbitmq:32 | ✓ RabbitMQ доступен после 1 попытки
+2026-01-21T04:07:39.647560+0000 | INFO | rabbitmq_init:connect:29 | ✓ Успешно подключились к RabbitMQ
+2026-01-21T04:07:39.647761+0000 | INFO | bot_init:bot_init:15 | 🔑 Токен бота получен (длина: 45 символов)
+2026-01-21T04:07:39.955509+0000 | INFO | bot_init:bot_init:21 | Name     - goodboy
+2026-01-21T04:07:39.955693+0000 | INFO | bot_init:bot_init:22 | Username - @ggoodboyybot
+2026-01-21T04:07:39.955754+0000 | INFO | bot_init:bot_init:23 | ID       - 848325310
+2026-01-21T04:07:39.955810+0000 | INFO | bot_init:bot_init:24 | BOT INITIALIZATION
+2026-01-21T04:07:39.956358+0000 | INFO | bot_init:bot_init:32 | 🚀 Запускаем телеграм бота...
+2026-01-21T04:07:39.956691+0000 | INFO | command_handlers:register_command_handlers:55 | Инициализация команд прошла успешно
+2026-01-21T04:07:39.956791+0000 | INFO | message_handlers:register_message_handlers:48 | Инициализация сообщений прошла успешно
+2026-01-21T04:07:39.956848+0000 | INFO | __main__:initialize:41 | ✅ Все компоненты инициализированы
+2026-01-21T04:07:39.956936+0000 | ERROR | __main__:run:50 | ❌ Ошибка при запуске бота: 'FitnessBotApp' object has no attribute 'bot_initializer'
+2026-01-21T04:07:39.958502+0000 | ERROR | __main__:<module>:78 | 💥 Критическая ошибка: 'FitnessBotApp' object has no attribute 'bot_initializer'
+2026-01-21T04:08:24.804254+0000 | INFO | rabbitmq_service:wait_for_rabbitmq:32 | ✓ RabbitMQ доступен после 1 попытки
+2026-01-21T04:08:24.813219+0000 | INFO | rabbitmq_init:connect:29 | ✓ Успешно подключились к RabbitMQ
+2026-01-21T04:08:24.813401+0000 | INFO | bot_init:bot_init:15 | 🔑 Токен бота получен (длина: 45 символов)
+2026-01-21T04:08:25.054298+0000 | INFO | bot_init:bot_init:21 | Name     - goodboy
+2026-01-21T04:08:25.054565+0000 | INFO | bot_init:bot_init:22 | Username - @ggoodboyybot
+2026-01-21T04:08:25.054803+0000 | INFO | bot_init:bot_init:23 | ID       - 848325310
+2026-01-21T04:08:25.054923+0000 | INFO | bot_init:bot_init:24 | BOT INITIALIZATION
+2026-01-21T04:08:25.056058+0000 | INFO | bot_init:bot_init:32 | 🚀 Запускаем телеграм бота...
+2026-01-21T04:08:25.056750+0000 | INFO | command_handlers:register_command_handlers:55 | Инициализация команд прошла успешно
+2026-01-21T04:08:25.056955+0000 | INFO | message_handlers:register_message_handlers:48 | Инициализация сообщений прошла успешно
+2026-01-21T04:08:25.057070+0000 | INFO | __main__:initialize:41 | ✅ Все компоненты инициализированы
+2026-01-21T04:08:25.057173+0000 | ERROR | __main__:run:50 | ❌ Ошибка при запуске бота: 'Bot' object has no attribute 'start_polling'
+2026-01-21T04:08:25.059642+0000 | ERROR | __main__:<module>:78 | 💥 Критическая ошибка: 'Bot' object has no attribute 'start_polling'
+2026-01-21T04:09:04.158833+0000 | INFO | rabbitmq_service:wait_for_rabbitmq:32 | ✓ RabbitMQ доступен после 1 попытки
+2026-01-21T04:09:04.167508+0000 | INFO | rabbitmq_init:connect:29 | ✓ Успешно подключились к RabbitMQ
+2026-01-21T04:09:04.167697+0000 | INFO | bot_init:bot_init:15 | 🔑 Токен бота получен (длина: 45 символов)
+2026-01-21T04:09:04.570866+0000 | INFO | bot_init:bot_init:21 | Name     - goodboy
+2026-01-21T04:09:04.571028+0000 | INFO | bot_init:bot_init:22 | Username - @ggoodboyybot
+2026-01-21T04:09:04.571083+0000 | INFO | bot_init:bot_init:23 | ID       - 848325310
+2026-01-21T04:09:04.571179+0000 | INFO | bot_init:bot_init:24 | BOT INITIALIZATION
+2026-01-21T04:09:04.571740+0000 | INFO | bot_init:bot_init:32 | 🚀 Запускаем телеграм бота...
+2026-01-21T04:09:04.572066+0000 | INFO | command_handlers:register_command_handlers:55 | Инициализация команд прошла успешно
+2026-01-21T04:09:04.572177+0000 | INFO | message_handlers:register_message_handlers:48 | Инициализация сообщений прошла успешно
+2026-01-21T04:09:04.572242+0000 | INFO | __main__:initialize:41 | ✅ Все компоненты инициализированы
+2026-01-21T04:09:04.572300+0000 | ERROR | __main__:run:50 | ❌ Ошибка при запуске бота: At least one bot instance is required to start polling
+2026-01-21T04:09:04.573786+0000 | ERROR | __main__:<module>:78 | 💥 Критическая ошибка: At least one bot instance is required to start polling
+2026-01-21T04:09:21.795263+0000 | INFO | rabbitmq_service:wait_for_rabbitmq:32 | ✓ RabbitMQ доступен после 1 попытки
+2026-01-21T04:09:21.804387+0000 | INFO | rabbitmq_init:connect:29 | ✓ Успешно подключились к RabbitMQ
+2026-01-21T04:09:21.804548+0000 | INFO | bot_init:bot_init:15 | 🔑 Токен бота получен (длина: 45 символов)
+2026-01-21T04:09:21.971975+0000 | INFO | bot_init:bot_init:21 | Name     - goodboy
+2026-01-21T04:09:21.972276+0000 | INFO | bot_init:bot_init:22 | Username - @ggoodboyybot
+2026-01-21T04:09:21.972431+0000 | INFO | bot_init:bot_init:23 | ID       - 848325310
+2026-01-21T04:09:21.972559+0000 | INFO | bot_init:bot_init:24 | BOT INITIALIZATION
+2026-01-21T04:09:21.973836+0000 | INFO | bot_init:bot_init:32 | 🚀 Запускаем телеграм бота...
+2026-01-21T04:09:21.974501+0000 | INFO | command_handlers:register_command_handlers:55 | Инициализация команд прошла успешно
+2026-01-21T04:09:21.974767+0000 | INFO | message_handlers:register_message_handlers:48 | Инициализация сообщений прошла успешно
+2026-01-21T04:09:21.974920+0000 | INFO | __main__:initialize:41 | ✅ Все компоненты инициализированы
+2026-01-21T04:10:06.814866+0000 | INFO | rabbitmq_service:wait_for_rabbitmq:32 | ✓ RabbitMQ доступен после 1 попытки
+2026-01-21T04:10:06.823630+0000 | INFO | rabbitmq_init:connect:29 | ✓ Успешно подключились к RabbitMQ
+2026-01-21T04:10:06.823852+0000 | INFO | bot_init:bot_init:15 | 🔑 Токен бота получен (длина: 45 символов)
+2026-01-21T04:10:07.032499+0000 | INFO | bot_init:bot_init:21 | Name     - goodboy
+2026-01-21T04:10:07.032671+0000 | INFO | bot_init:bot_init:22 | Username - @ggoodboyybot
+2026-01-21T04:10:07.032739+0000 | INFO | bot_init:bot_init:23 | ID       - 848325310
+2026-01-21T04:10:07.032791+0000 | INFO | bot_init:bot_init:24 | BOT INITIALIZATION
+2026-01-21T04:10:07.033319+0000 | INFO | bot_init:bot_init:32 | 🚀 Запускаем телеграм бота...
+2026-01-21T04:10:07.033643+0000 | INFO | command_handlers:register_command_handlers:55 | Инициализация команд прошла успешно
+2026-01-21T04:10:07.033754+0000 | INFO | message_handlers:register_message_handlers:48 | Инициализация сообщений прошла успешно
+2026-01-21T04:10:07.033814+0000 | INFO | __main__:initialize:41 | ✅ Все компоненты инициализированы
+2026-01-21T04:10:07.033862+0000 | INFO | __main__:run:46 | ✅ Запуск бота
+2026-01-21T04:16:42.278441+0000 | INFO | command_handlers:test_command:52 | test command
+2026-01-21T06:16:18.447079+0000 | INFO | rabbitmq_service:wait_for_rabbitmq:32 | ✓ RabbitMQ доступен после 1 попытки
+2026-01-21T06:16:18.454926+0000 | INFO | rabbitmq_init:connect:29 | ✓ Успешно подключились к RabbitMQ
+2026-01-21T06:16:18.455087+0000 | INFO | bot_init:bot_init:15 | 🔑 Токен бота получен (длина: 45 символов)
+2026-01-21T06:16:18.738069+0000 | INFO | bot_init:bot_init:21 | Name     - goodboy
+2026-01-21T06:16:18.738227+0000 | INFO | bot_init:bot_init:22 | Username - @ggoodboyybot
+2026-01-21T06:16:18.738291+0000 | INFO | bot_init:bot_init:23 | ID       - 848325310
+2026-01-21T06:16:18.738338+0000 | INFO | bot_init:bot_init:24 | BOT INITIALIZATION
+2026-01-21T06:16:18.738959+0000 | INFO | bot_init:bot_init:32 | 🚀 Запускаем телеграм бота...
+2026-01-21T06:16:18.739088+0000 | INFO | __main__:initialize:46 | ✅ Все компоненты инициализированы
+2026-01-21T06:16:18.739147+0000 | INFO | __main__:run:59 | ✅ Запуск бота
+2026-01-21T06:17:06.840286+0000 | INFO | rabbitmq_service:wait_for_rabbitmq:32 | ✓ RabbitMQ доступен после 1 попытки
+2026-01-21T06:17:06.848000+0000 | INFO | rabbitmq_init:connect:29 | ✓ Успешно подключились к RabbitMQ
+2026-01-21T06:17:06.848173+0000 | INFO | bot_init:bot_init:15 | 🔑 Токен бота получен (длина: 45 символов)
+2026-01-21T06:17:07.080244+0000 | INFO | bot_init:bot_init:21 | Name     - goodboy
+2026-01-21T06:17:07.080552+0000 | INFO | bot_init:bot_init:22 | Username - @ggoodboyybot
+2026-01-21T06:17:07.080736+0000 | INFO | bot_init:bot_init:23 | ID       - 848325310
+2026-01-21T06:17:07.080883+0000 | INFO | bot_init:bot_init:24 | BOT INITIALIZATION
+2026-01-21T06:17:07.082633+0000 | INFO | bot_init:bot_init:32 | 🚀 Запускаем телеграм бота...
+2026-01-21T06:17:07.083041+0000 | INFO | __main__:initialize:46 | ✅ Все компоненты инициализированы
+2026-01-21T06:17:07.083195+0000 | INFO | __main__:run:59 | ✅ Запуск бота
+2026-01-21T06:33:37.984669+0000 | INFO | rabbitmq_service:wait_for_rabbitmq:32 | ✓ RabbitMQ доступен после 1 попытки
+2026-01-21T06:33:37.993994+0000 | INFO | rabbitmq_init:connect:29 | ✓ Успешно подключились к RabbitMQ
+2026-01-21T06:33:37.994359+0000 | INFO | bot_init:bot_init:15 | 🔑 Токен бота получен (длина: 45 символов)
+2026-01-21T06:33:38.169730+0000 | INFO | bot_init:bot_init:21 | Name     - goodboy
+2026-01-21T06:33:38.169975+0000 | INFO | bot_init:bot_init:22 | Username - @ggoodboyybot
+2026-01-21T06:33:38.170225+0000 | INFO | bot_init:bot_init:23 | ID       - 848325310
+2026-01-21T06:33:38.170340+0000 | INFO | bot_init:bot_init:24 | BOT INITIALIZATION
+2026-01-21T06:33:38.171740+0000 | INFO | bot_init:bot_init:32 | 🚀 Запускаем телеграм бота...
+2026-01-21T06:33:38.172104+0000 | INFO | __main__:initialize:46 | ✅ Все компоненты инициализированы
+2026-01-21T06:33:38.172255+0000 | INFO | __main__:run:59 | ✅ Запуск бота
+2026-01-21T06:34:06.139583+0000 | INFO | rabbitmq_service:wait_for_rabbitmq:32 | ✓ RabbitMQ доступен после 1 попытки
+2026-01-21T06:34:06.149951+0000 | INFO | rabbitmq_init:connect:29 | ✓ Успешно подключились к RabbitMQ
+2026-01-21T06:34:06.150146+0000 | INFO | bot_init:bot_init:15 | 🔑 Токен бота получен (длина: 45 символов)
+2026-01-21T06:34:06.322322+0000 | INFO | bot_init:bot_init:21 | Name     - goodboy
+2026-01-21T06:34:06.322564+0000 | INFO | bot_init:bot_init:22 | Username - @ggoodboyybot
+2026-01-21T06:34:06.322723+0000 | INFO | bot_init:bot_init:23 | ID       - 848325310
+2026-01-21T06:34:06.322839+0000 | INFO | bot_init:bot_init:24 | BOT INITIALIZATION
+2026-01-21T06:34:06.324168+0000 | INFO | bot_init:bot_init:32 | 🚀 Запускаем телеграм бота...
+2026-01-21T06:34:06.324429+0000 | INFO | __main__:initialize:46 | ✅ Все компоненты инициализированы
+2026-01-21T06:34:06.324563+0000 | INFO | __main__:run:59 | ✅ Запуск бота
+2026-01-21T07:20:13.618485+0000 | INFO | rabbitmq_service:wait_for_rabbitmq:32 | ✓ RabbitMQ доступен после 1 попытки
+2026-01-21T07:20:13.629009+0000 | INFO | rabbitmq_init:connect:29 | ✓ Успешно подключились к RabbitMQ
+2026-01-21T07:20:13.629487+0000 | INFO | bot_init:bot_init:15 | 🔑 Токен бота получен (длина: 45 символов)
+2026-01-21T07:20:13.811740+0000 | INFO | bot_init:bot_init:21 | Name     - goodboy
+2026-01-21T07:20:13.811905+0000 | INFO | bot_init:bot_init:22 | Username - @ggoodboyybot
+2026-01-21T07:20:13.811966+0000 | INFO | bot_init:bot_init:23 | ID       - 848325310
+2026-01-21T07:20:13.812011+0000 | INFO | bot_init:bot_init:24 | BOT INITIALIZATION
+2026-01-21T07:20:13.812666+0000 | INFO | bot_init:bot_init:32 | 🚀 Запускаем телеграм бота...
+2026-01-21T07:20:13.812773+0000 | INFO | __main__:initialize:46 | ✅ Все компоненты инициализированы
+2026-01-21T07:20:13.812870+0000 | INFO | __main__:run:59 | ✅ Запуск бота

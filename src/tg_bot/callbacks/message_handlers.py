@@ -2,7 +2,9 @@
 Обработчики обычных сообщений для телеграм бота
 """
 from aiogram import types
-from core import RabbitMQInitializer
+from loguru import logger
+
+from tg_bot.core.rabbitmq_init import RabbitMQInitializer
 
 
 class MessageHandler:
@@ -29,7 +31,7 @@ class MessageHandler:
             # await message.answer("Сообщение получено! Обрабатываю... 🔄")
 
         except Exception as e:
-            print(f"❌ Ошибка при обработке сообщения: {e}")
+            logger.error(f"❌ Ошибка при обработке сообщения: {e}")
             await message.answer("Произошла ошибка при обработке сообщения. Попробуйте позже. ⚠️")
 
 
@@ -42,3 +44,5 @@ async def register_message_handlers(dp, rabbitmq_initializer: RabbitMQInitialize
     async def handle_all_messages(message: types.Message):
         """Обработчик всех сообщений (кроме команд)"""
         await handler.handle_message(message)
+
+    # logger.info("Инициализация сообщений прошла успешно")

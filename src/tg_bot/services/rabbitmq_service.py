@@ -4,7 +4,10 @@
 import asyncio
 import os
 import aiormq
+from loguru import logger
+
 from tg_bot.core.config import config
+
 
 async def wait_for_rabbitmq(max_retries: int = 30, delay: float = 2.0) -> bool:
     """
@@ -26,12 +29,12 @@ async def wait_for_rabbitmq(max_retries: int = 30, delay: float = 2.0) -> bool:
         try:
             connection = await aiormq.connect(rabbitmq_url)
             await connection.close()
-            print(f"✓ RabbitMQ доступен после {attempt + 1} попытки")
+            logger.info(f"✓ RabbitMQ доступен после {attempt + 1} попытки")
             return True
         except (aiormq.exceptions.AMQPConnectionError, ConnectionRefusedError, OSError) as e:
-            print(f"⚠ Попытка {attempt + 1}/{max_retries}: RabbitMQ недоступен - {e}")
+            logger.info(f"⚠ Попытка {attempt + 1}/{max_retries}: RabbitMQ недоступен - {e}")
             if attempt < max_retries - 1:
                 await asyncio.sleep(delay)
             else:
-                print("❌ Не удалось подключиться к RabbitMQ после всех попыток")
+                logger.error("❌ Не удалось подключиться к RabbitMQ после всех попыток")
                 raise

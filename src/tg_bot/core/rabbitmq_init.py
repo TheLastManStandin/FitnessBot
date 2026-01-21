@@ -2,8 +2,11 @@
 Инициализация RabbitMQ брокера
 """
 import os
+from loguru import logger
 from faststream.rabbit import RabbitBroker
-from services.rabbitmq_service import wait_for_rabbitmq
+from pika import ConnectionParameters
+
+from tg_bot.services.rabbitmq_service import wait_for_rabbitmq
 from tg_bot.core.config import config
 
 
@@ -23,7 +26,7 @@ class RabbitMQInitializer:
         """Подключается к RabbitMQ"""
         await wait_for_rabbitmq()
         await self.broker.connect()
-        print("✓ Успешно подключились к RabbitMQ")
+        logger.info("✓ Успешно подключились к RabbitMQ")
 
     def get_broker(self) -> RabbitBroker:
         """Возвращает экземпляр брокера"""
