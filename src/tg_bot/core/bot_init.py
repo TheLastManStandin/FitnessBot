@@ -28,8 +28,6 @@ async def bot_init():
 
     if not bot or not dp:
         raise RuntimeError("Бот не инициализирован")
-
-    logger.info("🚀 Запускаем телеграм бота...")
     
     return (bot, dp)
 

@@ -1,13 +1,25 @@
-from fastapi import APIRouter
+from fastapi import FastAPI
 from typing import Optional
-from tg_bot.callbacks.command_handlers import tgbot_command
+from pydantic import BaseModel
+from tg_bot.core.app_init import app as main_app
 
-router = APIRouter()
+app = FastAPI()
 
-@router.get("/")
-async def tg_bot_test():
-    return {"message" : "api раотате"}
+class MessageIn(BaseModel):
+    test: Optional[str] = None
 
-@router.post("/message")
-async def message(test: str = Optional[str]):
-    return {"message" : "200"}
+@app.get("/")
+async def home():
+    return {"ans": "200"}
+
+@app.post("/message")
+async def message(data: MessageIn):
+    if not main_app or not main_app.bot:
+        return {"error": "bot not initialized"}
+
+    await main_app.bot.send_message(
+        chat_id=221346456,
+        text=data.test or "jepa"
+    )
+
+    return {"message": "200"}
